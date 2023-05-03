@@ -1,5 +1,8 @@
 // eslint-disable-next-line no-undef
 const fs = require('fs');
+
+//every class should 
+
 class Journal {
     constructor() {
         this.entries = {};
