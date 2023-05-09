@@ -46,6 +46,7 @@ class HtmlBuilder {
 
   // fluent
   addChildFluent(childName, childText) {
+    
     let child = new Tag(childName, childText);
     this.root.children.push(child);
     return this;
