@@ -13,8 +13,10 @@ class Tag {
   toStringImpl(indent) {
     let html = [];
     let i = ' '.repeat(indent * Tag.indentSize);
+    // opening tag
     html.push(`${i}<${this.name}>\n`);
     if (this.text.length > 0) {
+      // adding text with between
       html.push(' '.repeat(Tag.indentSize * (indent + 1)));
       html.push(this.text);
       html.push('\n');
@@ -24,6 +26,7 @@ class Tag {
       html.push(child.toStringImpl(indent + 1));
     }
 
+    //closing tag
     html.push(`${i}</${this.name}>\n`);
     return html.join('');
   }
@@ -35,19 +38,21 @@ class Tag {
 
 class HtmlBuilder {
   constructor(rootName) {
+    //parent element
     this.root = new Tag(rootName);
     this.rootName = rootName;
   }
 
   // non-fluent
   addChild(childName, childText) {
+    //children element
     let child = new Tag(childName, childText);
     this.root.children.push(child);
   }
 
   // fluent
   addChildFluent(childName, childText) {
-    
+    //children element
     let child = new Tag(childName, childText);
     this.root.children.push(child);
     return this;
@@ -58,6 +63,7 @@ class HtmlBuilder {
   }
 
   clear() {
+    //delete children
     this.root = new Tag(this.rootName);
   }
 
