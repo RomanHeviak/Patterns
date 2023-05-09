@@ -35,6 +35,8 @@ class ProductFilter {
     filterBySize(products: Product[], size: Size) {
         return products.filter(p => p.size === size);
     }
+
+    //we can add some new filters but don't change the class logic
 }
 
 const apple = new Product('Apple', Color.green, Size.sm);
