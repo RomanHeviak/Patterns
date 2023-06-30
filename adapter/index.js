@@ -1,3 +1,5 @@
+//structural pattern that enables object with incompatible interfaces works together
+
 class RedisDataManager {
     constructor() {
         this.connect = function() {
