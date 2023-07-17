@@ -10,12 +10,6 @@ class BlueShapeRenderer {
     }
 }
 
-class Color {
-    constructor(color){
-        this.color = color;
-    }
-}
-
 class Shape {
     constructor(renderer) {
         this.renderer = renderer;
