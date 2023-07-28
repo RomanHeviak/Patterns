@@ -24,6 +24,35 @@ class AutoFactory {
 }
 
 /////////////////////// example 2
+class FormattedText {
+    constructor(text) {
+        this.text = text;
+        this.caps = new Array(text.lenght).map(() => false);
+    }
+
+    capitalize(start, end) {
+        for(let i = start; i <= end; i++){
+            this.caps[i] = true;
+        }
+    }
+
+    toString() {
+        const res = [];
+        // eslint-disable-next-line guard-for-in
+        for(let i in this.text){
+            let c = this.text[i];
+            res.push(this.caps[i] ? c.toUpperCase() : c);
+        }
+        return res.join('');
+    }
+}
+
+const text = 'This is a brave new string';
+const ft = new FormattedText(text);
+ft.capitalize(10, 15);
+console.log(ft.toString());
+
+////////////////////////// 
 class User {
     constructor(fullname) {
         this.fullname = fullname;
